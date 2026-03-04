@@ -324,11 +324,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .section-subtitle::after {
-  content: url('../images/separator.svg');
-  display: block;
-  width: 100px;
-  margin-inline: auto;
-  margin-block-start: 5px;
+  content: none;
 }
 
 .btn {
@@ -2238,6 +2234,63 @@ textarea.input-field {
 }
 
 
+
+/* Bottom Menu Bar */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.bottom-menu a,
+.dropbtn {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown.open .dropdown-content { display: block; }
+
+@media (max-width: 600px) {
+  .bottom-menu {
+    font-size: 12px;
+    padding: 8px 0;
+    gap: 10px;
+  }
+
+  .dropdown-content { min-width: 120px; }
+}
+
 /* Hide checkbox */
 .menu-toggle {
   display: none;
@@ -2275,16 +2328,51 @@ textarea.input-field {
   z-index: 1002;
   overflow-y: auto;
 }
+
+.sidebar-content {
+  display: grid;
+  gap: 12px;
+}
+
+.sidebar-header {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 6px 44px 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.sidebar-eyebrow {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.sidebar-title {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin-top: 2px;
+  color: #fff;
+}
 .menu-toggle:checked ~ .sidebar {
   left: 0;
 }
 
 /* Close button */
 .sidebar .close-btn {
-  display: block;
-  text-align: right;
-  font-size: 2rem;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  font-size: 2.2rem;
+  line-height: 1;
   color: white;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
 
@@ -2294,7 +2382,11 @@ textarea.input-field {
   align-items: flex-start;
   gap: 12px;
   color: white;
-  margin: 15px 0;
+  margin: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Sidebar links (numbers & emails) */
@@ -2302,18 +2394,30 @@ textarea.input-field {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  line-height: 1.45;
+}
+
+.sidebar-contact-list {
+  display: grid;
+  gap: 8px;
 }
 
 /* Icon style */
 .sidebar-item ion-icon {
+  min-width: 20px;
   font-size: 20px;
-  color: white;
+  color: #f7d7b6;
+  margin-top: 1px;
 }
 
 /* Change ONLY the clicked/focused link */
 .sidebar-item a:active,
 .sidebar-item a:focus {
   color: hsl(38, 61%, 73%); /* gold color */
+}
+
+.sidebar-item span {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* Overlay */

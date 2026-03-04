@@ -11,7 +11,7 @@
 const preloader = document.querySelector("[data-preaload]");
 
 window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
+  if (preloader) preloader.classList.add("loaded");
   document.body.classList.add("loaded");
 });
 
@@ -88,7 +88,6 @@ window.addEventListener("scroll", function () {
  * HERO SLIDER
  */
 
-const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
 const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
 const heroSliderNextBtn = document.querySelector("[data-next-btn]");
@@ -151,6 +150,13 @@ if (sliderButtons.length) {
 
 window.addEventListener("load", autoSlide);
 
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    clearInterval(autoSlideInterval);
+  } else {
+    autoSlide();
+  }
+});
 
 
 /**
@@ -181,28 +187,27 @@ if (parallaxItems.length) {
   }, { passive: true });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const sidebar = document.getElementById("sidebar");
-  const closeSidebar = document.getElementById("closeSidebar");
-  const overlay = document.getElementById("overlay");
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdowns = document.querySelectorAll('.dropdown');
 
-  if (hamburger && sidebar && closeSidebar && overlay) {
-    hamburger.addEventListener("click", () => {
-      sidebar.classList.add("active");
-      overlay.classList.add("active");
-    });
+  dropdowns.forEach((drop) => {
+    const btn = drop.querySelector('.dropbtn');
+    if (!btn) return;
 
-    closeSidebar.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
-    });
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
 
-    overlay.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
+      drop.classList.toggle('open');
+      dropdowns.forEach((other) => {
+        if (other !== drop) other.classList.remove('open');
+      });
     });
-  }
+  });
+
+  window.addEventListener('click', () => {
+    dropdowns.forEach((drop) => drop.classList.remove('open'));
+  }, { passive: true });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
