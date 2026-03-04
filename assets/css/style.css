@@ -2467,18 +2467,6 @@ textarea.input-field {
 
 body.loaded { overflow: auto; }
 
-body {
-  padding-bottom: 70px;
-}
-
-
-.section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 900px;
-}
-
-
-
 .display-1,
 .headline-1,
 .headline-2,
@@ -2569,12 +2557,6 @@ body {
 
 .sidebar {
   background: linear-gradient(180deg, #5e4037 0%, #4a322b 100%);
-  box-shadow: 12px 0 28px rgba(0, 0, 0, 0.35);
-}
-
-.sidebar .close-btn:hover,
-.sidebar .close-btn:focus-visible {
-  background: rgba(255, 255, 255, 0.18);
 }
 
 .whatsapp-popup {

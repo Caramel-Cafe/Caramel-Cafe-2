@@ -187,7 +187,6 @@ if (parallaxItems.length) {
   }, { passive: true });
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const dropdowns = document.querySelectorAll('.dropdown');
 
