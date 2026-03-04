@@ -177,14 +177,14 @@ html {
 }
 
 body {
-  background-color: var(--eerie-black-1);
-  color: var(--white);
+  background: linear-gradient(180deg, #fffdf8 0%, #fff9f2 55%, #fff7ef 100%);
+  color: #3b2f2b;
   font-family: var(--fontFamily-dm_sans);
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
   overflow: hidden;
-  height: 300vh;
+  min-height: 100vh;
 }
 
 body.loaded { overflow: overlay; }
@@ -324,11 +324,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .section-subtitle::after {
-  content: url('../images/separator.svg');
-  display: block;
-  width: 100px;
-  margin-inline: auto;
-  margin-block-start: 5px;
+  content: none;
 }
 
 .btn {
@@ -2178,8 +2174,8 @@ textarea.input-field {
 </style>
 
 
-<style>
-    .whatsapp-popup {
+/* WhatsApp popup */
+.whatsapp-popup {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -2223,9 +2219,8 @@ textarea.input-field {
         border-radius: 5px;
         cursor: pointer;
     }
-</style>
 
-           /* This is making all thw cards to be at 200*200 */
+/* This is making all the cards 200x200 */
 .menu-card .card-banner.img-holder {
     width: 200px !important;
     height: 200px !important;
@@ -2238,6 +2233,63 @@ textarea.input-field {
     display: block;
 }
 
+
+
+/* Bottom Menu Bar */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.bottom-menu a,
+.dropbtn {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown.open .dropdown-content { display: block; }
+
+@media (max-width: 600px) {
+  .bottom-menu {
+    font-size: 12px;
+    padding: 8px 0;
+    gap: 10px;
+  }
+
+  .dropdown-content { min-width: 120px; }
+}
 
 /* Hide checkbox */
 .menu-toggle {
@@ -2276,16 +2328,51 @@ textarea.input-field {
   z-index: 1002;
   overflow-y: auto;
 }
+
+.sidebar-content {
+  display: grid;
+  gap: 12px;
+}
+
+.sidebar-header {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 6px 44px 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.sidebar-eyebrow {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.sidebar-title {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin-top: 2px;
+  color: #fff;
+}
 .menu-toggle:checked ~ .sidebar {
   left: 0;
 }
 
 /* Close button */
 .sidebar .close-btn {
-  display: block;
-  text-align: right;
-  font-size: 2rem;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  font-size: 2.2rem;
+  line-height: 1;
   color: white;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
 
@@ -2295,7 +2382,11 @@ textarea.input-field {
   align-items: flex-start;
   gap: 12px;
   color: white;
-  margin: 15px 0;
+  margin: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Sidebar links (numbers & emails) */
@@ -2303,18 +2394,30 @@ textarea.input-field {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  line-height: 1.45;
+}
+
+.sidebar-contact-list {
+  display: grid;
+  gap: 8px;
 }
 
 /* Icon style */
 .sidebar-item ion-icon {
+  min-width: 20px;
   font-size: 20px;
-  color: white;
+  color: #f7d7b6;
+  margin-top: 1px;
 }
 
 /* Change ONLY the clicked/focused link */
 .sidebar-item a:active,
 .sidebar-item a:focus {
   color: hsl(38, 61%, 73%); /* gold color */
+}
+
+.sidebar-item span {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* Overlay */
@@ -2347,3 +2450,271 @@ textarea.input-field {
 
 
 
+
+
+/*-----------------------------------*\
+  #MODERN LIGHT REFRESH
+\*-----------------------------------*/
+:root {
+  --surface-1: #ffffff;
+  --surface-2: #fff8f1;
+  --surface-3: #fdf3e7;
+  --text-1: #3b2f2b;
+  --text-2: #725f58;
+  --accent-soft: #f3d7b7;
+  --shadow-soft: 0 10px 30px rgba(136, 98, 63, 0.12);
+}
+
+body.loaded { overflow: auto; }
+
+body {
+  padding-bottom: 70px;
+}
+
+
+.section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+
+
+.display-1,
+.headline-1,
+.headline-2,
+.title-1,
+.title-2,
+.title-3,
+.title-4 {
+  color: var(--text-1);
+}
+
+.section,
+.menu .container,
+.special-dish-content {
+  position: relative;
+}
+
+.special-dish-content,
+.bg-black-10 {
+  background-color: var(--surface-2);
+}
+
+.card-text,
+.section-text,
+.label-1,
+.label-2 {
+  color: var(--text-2);
+}
+
+.hero::before {
+  background: linear-gradient(to top, rgba(255, 246, 236, 0.9), rgba(255, 255, 255, 0.15), transparent);
+}
+
+.hero .section-subtitle,
+.hero .hero-title,
+.hero .hero-text {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.menu-card {
+  background: var(--surface-1);
+  border: 1px solid rgba(212, 177, 143, 0.35);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(136, 98, 63, 0.18);
+}
+
+.btn-primary {
+  background-color: #5e4037;
+  color: #fff9f4;
+  border-radius: 999px;
+}
+
+.btn-primary::before {
+  background-color: var(--gold-crayola);
+}
+
+.bottom-menu {
+  background: rgba(255, 252, 247, 0.95) !important;
+  border-top: 1px solid rgba(186, 145, 108, 0.35) !important;
+  box-shadow: 0 -10px 30px rgba(136, 98, 63, 0.12);
+}
+
+.bottom-menu a,
+.dropbtn {
+  color: #4f3b32 !important;
+  font-weight: 600;
+}
+
+.dropdown-content {
+  background: #fff !important;
+  color: #3f2f27 !important;
+  border: 1px solid rgba(186, 145, 108, 0.2);
+}
+
+.dropdown-content a {
+  color: #3f2f27 !important;
+}
+
+.hamburger span {
+  background-color: #5e4037;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #5e4037 0%, #4a322b 100%);
+  box-shadow: 12px 0 28px rgba(0, 0, 0, 0.35);
+}
+
+.sidebar .close-btn:hover,
+.sidebar .close-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.whatsapp-popup {
+  width: min(280px, 92vw);
+  background: #fff7ee;
+  border: 1px solid rgba(186, 145, 108, 0.35);
+  box-shadow: var(--shadow-soft);
+}
+
+.whatsapp-popup button {
+  color: #fff;
+  background-color: #5e4037;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Sidebar glassmorphism redesign (reference-inspired) */
+.sidebar {
+  left: -360px;
+  width: min(340px, 86vw);
+  padding: 14px;
+  border-radius: 0 24px 24px 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(160deg, rgba(238, 247, 255, 0.88) 0%, rgba(226, 240, 255, 0.78) 50%, rgba(213, 233, 255, 0.72) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 18px 0 50px rgba(18, 67, 120, 0.25);
+}
+
+.sidebar-content {
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(242, 249, 255, 0.28));
+}
+
+.sidebar-window-controls {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0 8px 6px;
+}
+
+.sidebar-window-controls span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.sidebar-window-controls span:nth-child(1) { background: #ff4d4f; }
+.sidebar-window-controls span:nth-child(2) { background: #ffcc00; }
+.sidebar-window-controls span:nth-child(3) { background: #33d17a; }
+
+.sidebar-header {
+  margin-bottom: 6px;
+  padding: 8px 38px 12px 8px;
+  border-bottom: 1px solid rgba(56, 100, 150, 0.2);
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-profile img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 18px rgba(54, 105, 164, 0.25);
+}
+
+.sidebar-eyebrow {
+  color: #5a7596;
+  font-size: 1.2rem;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+.sidebar-title {
+  font-size: 2.8rem;
+  color: #102840;
+  margin-top: -2px;
+  line-height: 1.1;
+}
+
+.sidebar .close-btn {
+  top: 8px;
+  right: 6px;
+  color: #1d4f88;
+  border: 1px solid rgba(53, 107, 173, 0.35);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.sidebar-item {
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(142, 187, 232, 0.45);
+  box-shadow: 0 6px 20px rgba(55, 110, 170, 0.12);
+}
+
+.sidebar-item ion-icon {
+  color: #2f73b4;
+}
+
+.sidebar-item span,
+.sidebar-item a {
+  color: #1d3551;
+}
+
+.sidebar-item a:hover,
+.sidebar-item a:focus-visible {
+  color: #2b83dd;
+}
+
+.sidebar-contact-list {
+  gap: 6px;
+}
+
+.overlay {
+  background: rgba(10, 28, 52, 0.42);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.hamburger {
+  top: 16px;
+  right: 16px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
