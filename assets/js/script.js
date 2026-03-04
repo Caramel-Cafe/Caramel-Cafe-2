@@ -11,7 +11,7 @@
 const preloader = document.querySelector("[data-preaload]");
 
 window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
+  if (preloader) preloader.classList.add("loaded");
   document.body.classList.add("loaded");
 });
 
@@ -43,7 +43,9 @@ const toggleNavbar = function () {
   document.body.classList.toggle("nav-active");
 }
 
-addEventOnElements(navTogglers, "click", toggleNavbar);
+if (navbar && overlay && navTogglers.length) {
+  addEventOnElements(navTogglers, "click", toggleNavbar);
+}
 
 
 
@@ -68,6 +70,8 @@ const hideHeader = function () {
 }
 
 window.addEventListener("scroll", function () {
+  if (!header || !backTopBtn) return;
+
   if (window.scrollY >= 50) {
     header.classList.add("active");
     backTopBtn.classList.add("active");
@@ -76,7 +80,7 @@ window.addEventListener("scroll", function () {
     header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
-});
+}, { passive: true });
 
 
 
@@ -84,7 +88,6 @@ window.addEventListener("scroll", function () {
  * HERO SLIDER
  */
 
-const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
 const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
 const heroSliderNextBtn = document.querySelector("[data-next-btn]");
@@ -93,6 +96,7 @@ let currentSlidePos = 0;
 let lastActiveSliderItem = heroSliderItems[0];
 
 const updateSliderPos = function () {
+  if (!heroSliderItems.length || !lastActiveSliderItem) return;
   lastActiveSliderItem.classList.remove("active");
   heroSliderItems[currentSlidePos].classList.add("active");
   lastActiveSliderItem = heroSliderItems[currentSlidePos];
@@ -108,7 +112,7 @@ const slideNext = function () {
   updateSliderPos();
 }
 
-heroSliderNextBtn.addEventListener("click", slideNext);
+if (heroSliderNextBtn) heroSliderNextBtn.addEventListener("click", slideNext);
 
 const slidePrev = function () {
   if (currentSlidePos <= 0) {
@@ -120,7 +124,7 @@ const slidePrev = function () {
   updateSliderPos();
 }
 
-heroSliderPrevBtn.addEventListener("click", slidePrev);
+if (heroSliderPrevBtn) heroSliderPrevBtn.addEventListener("click", slidePrev);
 
 /**
  * auto slide
@@ -129,19 +133,30 @@ heroSliderPrevBtn.addEventListener("click", slidePrev);
 let autoSlideInterval;
 
 const autoSlide = function () {
+  if (!heroSliderItems.length) return;
   autoSlideInterval = setInterval(function () {
     slideNext();
   }, 7000);
 }
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
-  clearInterval(autoSlideInterval);
-});
+const sliderButtons = [heroSliderNextBtn, heroSliderPrevBtn].filter(Boolean);
+if (sliderButtons.length) {
+  addEventOnElements(sliderButtons, "mouseover", function () {
+    clearInterval(autoSlideInterval);
+  });
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+  addEventOnElements(sliderButtons, "mouseout", autoSlide);
+}
 
 window.addEventListener("load", autoSlide);
 
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    clearInterval(autoSlideInterval);
+  } else {
+    autoSlide();
+  }
+});
 
 
 /**
@@ -150,51 +165,56 @@ window.addEventListener("load", autoSlide);
 
 const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
-let x, y;
+if (parallaxItems.length) {
+  let rafId;
 
-window.addEventListener("mousemove", function (event) {
+  window.addEventListener("mousemove", function (event) {
+    if (rafId) return;
 
-  x = (event.clientX / window.innerWidth * 10) - 5;
-  y = (event.clientY / window.innerHeight * 10) - 5;
+    rafId = window.requestAnimationFrame(() => {
+      const baseX = ((event.clientX / window.innerWidth) * 10 - 5) * -1;
+      const baseY = ((event.clientY / window.innerHeight) * 10 - 5) * -1;
 
-  // reverse the number eg. 20 -> -20, -5 -> 5
-  x = x - (x * 2);
-  y = y - (y * 2);
+      for (let i = 0, len = parallaxItems.length; i < len; i++) {
+        const speed = Number(parallaxItems[i].dataset.parallaxSpeed) || 1;
+        const x = baseX * speed;
+        const y = baseY * speed;
+        parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+      }
 
-  for (let i = 0, len = parallaxItems.length; i < len; i++) {
-    x = x * Number(parallaxItems[i].dataset.parallaxSpeed);
-    y = y * Number(parallaxItems[i].dataset.parallaxSpeed);
-    parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
-  }
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const sidebar = document.getElementById("sidebar");
-  const closeSidebar = document.getElementById("closeSidebar");
-  const overlay = document.getElementById("overlay");
-
-  if (hamburger && sidebar && closeSidebar && overlay) {
-    hamburger.addEventListener("click", () => {
-      sidebar.classList.add("active");
-      overlay.classList.add("active");
+      rafId = null;
     });
+  }, { passive: true });
+}
 
-    closeSidebar.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
-    });
 
-    overlay.addEventListener("click", () => {
-      sidebar.classList.remove("active");
-      overlay.classList.remove("active");
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach((drop) => {
+    const btn = drop.querySelector('.dropbtn');
+    if (!btn) return;
+
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      drop.classList.toggle('open');
+      dropdowns.forEach((other) => {
+        if (other !== drop) other.classList.remove('open');
+      });
     });
-  }
+  });
+
+  window.addEventListener('click', () => {
+    dropdowns.forEach((drop) => drop.classList.remove('open'));
+  }, { passive: true });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('page-search');
+
+  if (!searchInput) return;
 
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();

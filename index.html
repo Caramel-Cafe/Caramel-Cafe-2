@@ -12,6 +12,7 @@
   <title>Caramel Cafe and Lounge - Online Menu</title>
   <meta name="title" content="Caramel Cafe and Lounge - Online Menu">
   <meta name="description" content="Caramel Cafe and Lounge">
+  <meta name="theme-color" content="#fff8f1">
 
   <!-- 
     - favicon  
@@ -33,9 +34,9 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
-  <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
+  <link rel="preload" as="image" href="./assets/images/Intro Shekla.jpg">
+  <link rel="preload" as="image" href="./assets/images/Intro Coffee.jpg">
+  <link rel="preload" as="image" href="./assets/images/Intro Cocktail.jpg">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFEZ5J4ZRP"></script>
@@ -49,6 +50,8 @@
   gtag('config', 'G-ESTQ1PLWJM');
 </script>
 
+</head>
+<body>
 
   <!-- 
     - #PRELOADER
@@ -58,107 +61,6 @@
     <div class="circle"></div>
     <p class="text">Caramel</p>
   </div>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bottom Menu Bar with Dropdowns</title>
-  <style>
-    body {
-      margin: 0;
-      padding-bottom: 70px; /* space for bottom menu */
-      font-family: "Poppins", sans-serif;
-    }
-
-    /* Bottom Menu Bar */
-    .bottom-menu {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(20,20,20,0.9); /* dark semi-transparent */
-      color: #fff;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      z-index: 1000;
-      backdrop-filter: blur(8px);
-      border-top: 2px solid hsl(38, 61%, 73%); /* gold accent */
-    }
-
-    /* Menu items */
-    .bottom-menu a,
-    .dropbtn {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      padding: 6px 10px;
-      display: inline-block;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .bottom-menu a:hover,
-    .dropbtn:hover {
-      color: hsl(38, 61%, 73%); /* gold hover */
-    }
-
-    /* Dropdown container */
-    .dropdown {
-      position: relative;
-    }
-
-    /* Dropdown content */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      bottom: 100%;
-      background: #222;
-      color: #fff;
-      min-width: 160px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      border-radius: 6px;
-      z-index: 1001;
-      overflow: hidden;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 14px;
-      color: #fff;
-      text-decoration: none;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .dropdown-content a:hover {
-      background: hsl(38, 61%, 73%);
-      color: #111;
-    }
-
-    /* Visible when open */
-    .dropdown.open .dropdown-content {
-      display: block;
-    }
-
-    /* Mobile tweaks */
-    @media (max-width: 600px) {
-      .bottom-menu {
-        font-size: 12px;
-        padding: 8px 0;
-        gap: 10px;
-      }
-      .dropdown-content {
-        min-width: 120px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-
 
   <!-- Bottom Menu -->
   <div class="bottom-menu">
@@ -207,32 +109,6 @@
     </div>
   </div>
 
-  <!-- Script for dropdown toggle -->
-  <script>
-    document.querySelectorAll('.dropdown').forEach(drop => {
-      const btn = drop.querySelector('.dropbtn');
-      ['click', 'touchstart'].forEach(evt => {
-        btn.addEventListener(evt, e => {
-          e.preventDefault();
-          e.stopPropagation();
-          // Toggle this dropdown
-          drop.classList.toggle('open');
-          // Close others
-          document.querySelectorAll('.dropdown').forEach(other => {
-            if (other !== drop) other.classList.remove('open');
-          });
-        });
-      });
-    });
-
-    // Close when clicking outside
-    window.addEventListener('click', () => {
-      document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
-    });
-  </script>
-
-</body>
-</html>
 
 
 
@@ -249,7 +125,11 @@
 <!-- Sidebar -->
 <aside class="sidebar">
   <div class="sidebar-content">
-    <label for="menu-toggle" class="close-btn">&times;</label>
+    <div class="sidebar-header">
+      <p class="sidebar-eyebrow">Caramel Cafe</p>
+      <h2 class="sidebar-title">Visit & Contact</h2>
+      <label for="menu-toggle" class="close-btn" aria-label="Close sidebar">&times;</label>
+    </div>
 
     <!-- Location -->
     <div class="sidebar-item">
@@ -266,12 +146,12 @@
     <!-- Contacts -->
     <div class="sidebar-item">
       <ion-icon name="call-outline"></ion-icon>
-      <div>
-        <a href="tel:+256759859795">Munyonyo: +256759859795</a><br>
-        <a href="tel:+256709410410">Kansnaga: +256709410410</a><br>
-        <a href="tel:+256709769548">Lubowa: +256709769548</a><br>
-        <a href="tel:+256705500500">Naalya: +256705500500</a><br>
-        <a href="tel:+256766550001">Ntinda: +256766550001</a><br>
+      <div class="sidebar-contact-list">
+        <a href="tel:+256759859795">Munyonyo: +256759859795</a>
+        <a href="tel:+256709410410">Kansnaga: +256709410410</a>
+        <a href="tel:+256709769548">Lubowa: +256709769548</a>
+        <a href="tel:+256705500500">Naalya: +256705500500</a>
+        <a href="tel:+256766550001">Ntinda: +256766550001</a>
         <a href="tel:+256709744023">Acacia: +256709744023</a>
       </div>
     </div>
@@ -300,7 +180,7 @@
           <li class="slider-item active" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="./assets/images/Intro Shekla.jpg" width="1880" height="950" alt="" class="img-cover">
+              <img src="./assets/images/Intro Shekla.jpg" width="1880" height="950" alt="" class="img-cover" loading="eager" fetchpriority="high" decoding="async">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">Gooooooooood News</p>
@@ -327,7 +207,7 @@
           <li class="slider-item" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="./assets/images/Intro Coffee.jpg" width="1880" height="950" alt="" class="img-cover">
+              <img src="./assets/images/Intro Coffee.jpg" width="1880" height="950" alt="" class="img-cover" decoding="async" loading="lazy">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">Coffee Bliss</p>
@@ -352,7 +232,7 @@
           <li class="slider-item" data-hero-slider-item>
 
             <div class="slider-bg">
-              <img src="./assets/images/Intro Cocktail.jpg" width="1880" height="950" alt="" class="img-cover">
+              <img src="./assets/images/Intro Cocktail.jpg" width="1880" height="950" alt="" class="img-cover" decoding="async" loading="lazy">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">Sensational Cocktails</p>
@@ -399,7 +279,7 @@
 
         <div class="special-dish-banner">
           <img src="./assets/images/About Caramel.jpg" width="940" height="900" loading="lazy" alt="special dish"
-            class="img-cover" style="border-radius: 10px;">
+            class="img-cover" style="border-radius: 10px;" decoding="async">
         </div>
 
         <div class="special-dish-content bg-black-10">
@@ -426,9 +306,9 @@
           </div>
         </div>
 
-        <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" class="shape shape-1">
+        <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" class="shape shape-1" decoding="async">
 
-        <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt="" class="shape shape-2">
+        <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt="" class="shape shape-2" decoding="async">
 
       </section>
 
@@ -453,7 +333,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Caramel Breaky.webp" width="100" height="100" loading="lazy" alt="CARAMEL BREAKY"
-                    class="img-cover"   onclick="showWhatsAppOptions('CARAMEL BREAKY')">
+                    class="img-cover"   onclick="showWhatsAppOptions('CARAMEL BREAKY')" decoding="async">
                 </figure>
 
                 <div>
@@ -491,7 +371,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Farmers Breakfast.webp" width="100" height="100" loading="lazy" alt="FARMERS BREAKFAST"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -519,7 +399,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/CARAMEL CHICKEN NUGGETS WRAP.png" width="100" height="100" loading="lazy" alt="CARAMEL CHICKEN NUGGETS WRAP"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -547,7 +427,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Muesli.webp" width="100" height="100" loading="lazy" alt="MUESLI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -575,7 +455,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Belgian Waffle.webp" width="100" height="100" loading="lazy" alt="BELGIAN WAFFLE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -603,7 +483,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/American Pancake.webp" width="100" height="100" loading="lazy" alt="AMERICAN PANCAKES"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -631,7 +511,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Norwegian Croissant.webp" width="100" height="100" loading="lazy" alt="NORWEGIAN CROISSANT"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -659,7 +539,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/The Simple One.webp" width="100" height="100" loading="lazy" alt="THE SIMPLE ONE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -695,7 +575,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Samo-Masai.webp" width="100" height="100" loading="lazy" alt="SAMO-MASAI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -723,7 +603,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Combo 2.webp" width="100" height="100" loading="lazy" alt="CARAMEL COMBO 2"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -751,7 +631,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Ranchers.webp" width="100" height="100" loading="lazy" alt="RANCHERS BREAKFAST"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -779,7 +659,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Giant Salmon.webp" width="100" height="100" loading="lazy" alt="GIANT SALMON OMELETTE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -807,7 +687,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Sicilian Breakfast.webp" width="100" height="100" loading="lazy" alt="SICILIAN BREAKFAST"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -840,9 +720,9 @@
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -866,7 +746,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Falafel and Humus.webp" width="100" height="100" loading="lazy" alt="FALAFEL & HUMMUS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -894,7 +774,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicken Wings.webp" width="100" height="100" loading="lazy" alt="CARAMEL STICKY WINGS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -922,7 +802,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Lollypop.webp" width="100" height="100" loading="lazy" alt="CHICKEN LOLLIPOP"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -950,7 +830,7 @@
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Drumstick.webp" width="100" height="100" loading="lazy" alt="CHICKEN DRUMSTICKS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -980,7 +860,7 @@ served with soft lettuce and coleslaw salad.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Soup of the day (Clear chicken).webp" width="100" height="100" loading="lazy" alt="Clear Soup.jpg"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1010,7 +890,7 @@ Choose of Mushroom, Chicken, or Vegetable.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Soup of the day (Creamy Mushroom).webp" width="100" height="100" loading="lazy" alt="Creamy Soup"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1044,9 +924,9 @@ Choose of Mushroom, Chicken, or Vegetable.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
             
         </div>
@@ -1066,7 +946,7 @@ Choose of Mushroom, Chicken, or Vegetable.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Ranch Salad.webp" width="100" height="100" loading="lazy" alt="RANCH SALAD"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1097,7 +977,7 @@ with ranch dressing & topped with avocado
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Thai Chicken Salad.webp" width="100" height="100" loading="lazy" alt="THAI CHICKEN SALAD"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1126,7 +1006,7 @@ with ranch dressing & topped with avocado
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Crispy Chicken Salad.webp" width="100" height="100" loading="lazy" alt="CRISPY CHICKEN SALAD"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1154,7 +1034,7 @@ with ranch dressing & topped with avocado
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Caesar Salad.webp" width="100" height="100" loading="lazy" alt="CAESAR CHICKEN SALAD"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1185,7 +1065,7 @@ with ranch dressing & topped with avocado
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Mexican Salad.webp" width="100" height="100" loading="lazy" alt="MEXICAN SALAD"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1219,9 +1099,9 @@ with ranch dressing & topped with avocado
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -1240,7 +1120,7 @@ with ranch dressing & topped with avocado
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Grilled Chicken.webp" width="100" height="100" loading="lazy" alt="GRILLED CHICKEN BREAST"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1269,7 +1149,7 @@ and served alongside freshly steamed vegetables
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Sweet and Spicy.webp" width="100" height="100" loading="lazy" alt="SWEET & SPICY CHICKEN"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1297,7 +1177,7 @@ and served alongside freshly steamed vegetables
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Roasted Chicken.webp" width="100" height="100" loading="lazy" alt="ROASTED CHICKEN"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1324,7 +1204,7 @@ and served with your choice of side.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/BBQ ROASTED CHICKEN.png" width="100" height="100" loading="lazy" alt="BBQ ROASTED CHICKEN"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1353,7 +1233,7 @@ served steamed vegetables and your choice of accompaniment.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Thai coconut.webp" width="100" height="100" loading="lazy" alt="THAI COCONUT CHICKEN"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1382,7 +1262,7 @@ and spices, served with your choice of accompaniment.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Red Chicken Curry.webp" width="100" height="100" loading="lazy" alt="RED CHICKEN CURRY"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1411,7 +1291,7 @@ rich, cooking cream for a smooth, flavorful finish.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Tuscan Chicken.webp" width="100" height="100" loading="lazy" alt="TUSCAN CHICKEN"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1446,9 +1326,9 @@ parmesan and cream. Served with rice or accompaniment of your choice.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -1467,7 +1347,7 @@ parmesan and cream. Served with rice or accompaniment of your choice.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Cheza Beef.webp" width="100" height="100" loading="lazy" alt="CHEZA BEEF"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1497,7 +1377,7 @@ parmesan and cream. Served with rice or accompaniment of your choice.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Grilled Beef Fillet.webp" width="100" height="100" loading="lazy" alt="GRILLED BEEF FILLET"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1524,7 +1404,7 @@ parmesan and cream. Served with rice or accompaniment of your choice.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Beef Stew.webp" width="100" height="100" loading="lazy" alt="CARAMEL BEEF STEW"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1558,9 +1438,9 @@ parmesan and cream. Served with rice or accompaniment of your choice.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -1579,7 +1459,7 @@ parmesan and cream. Served with rice or accompaniment of your choice.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fish n Chips.webp" width="100" height="100" loading="lazy" alt="FISH & CHIPS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1608,7 +1488,7 @@ served with french fries and coleslaw.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Salmon Fillet.webp" width="100" height="100" loading="lazy" alt="SALMON FILLET"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1636,7 +1516,7 @@ steamed vegetables
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Grilled Fish.webp" width="100" height="100" loading="lazy" alt="GRILLED FISH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1663,7 +1543,7 @@ steamed vegetables
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fish Curry.webp" width="100" height="100" loading="lazy" alt="FISH CURRY"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1697,9 +1577,9 @@ curry sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -1718,7 +1598,7 @@ curry sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fish goulash.webp" width="100" height="100" loading="lazy" alt="FISH GOULASH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1747,7 +1627,7 @@ a blend of aromatic spices for a rich and flavorful dish.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Goat Shekla.webp" width="100" height="100" loading="lazy" alt="SHEKLA TIBS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1775,7 +1655,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicken Shekla.webp" width="100" height="100" loading="lazy" alt="SHEKLA TIBS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1808,7 +1688,7 @@ traditional Habesha spices.
         height="200"
         loading="lazy"
         alt="SHEKLA TIBS"
-        style="width: 200px; height: 200px; object-fit: cover; display: block;">
+        style="width: 200px; height: 200px; object-fit: cover; display: block;" decoding="async">
     </figure>
 
     <div style="width: 200px;">
@@ -1837,7 +1717,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Red Tibs.webp" width="100" height="100" loading="lazy" alt="RED OR WHITE TIBS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1863,7 +1743,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Bayenet Meat Special.webp" width="100" height="100" loading="lazy" alt="BAYENET SPECIAL"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1894,7 +1774,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO FOOD PIC.webp" width="100" height="100" loading="lazy" alt="BAYENET SPECIAL"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1928,9 +1808,9 @@ traditional Habesha spices.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -1949,7 +1829,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Penne Alfredo Pasta.webp" width="100" height="100" loading="lazy" alt="PENNE ALFREDO"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -1978,7 +1858,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Carbonara.webp" width="100" height="100" loading="lazy" alt="CARBONARA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2006,7 +1886,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Carbonara.webp" width="100" height="100" loading="lazy" alt="CARBONARA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2034,7 +1914,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Penne Arrabbiata.webp" width="100" height="100" loading="lazy" alt="PENNE ARRABIATA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2061,7 +1941,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Pesto Penne Pasta.webp" width="100" height="100" loading="lazy" alt="PENNE PESTO"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2089,7 +1969,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Bolognese Pasta.webp" width="100" height="100" loading="lazy" alt="BOLOGNAISE SPAGHETTI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2123,9 +2003,9 @@ traditional Habesha spices.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -2145,7 +2025,7 @@ traditional Habesha spices.
 
    <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
     <img src="./assets/images/NO FOOD PIC.webp" width="100" height="100" loading="lazy" alt="BEEF BURGER"
-   class="img-cover">
+   class="img-cover" decoding="async">
               </figure>
 
     <div>
@@ -2170,7 +2050,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO FOOD PIC.webp" width="100" height="100" loading="lazy" alt="CHICKEN BURGER"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2196,7 +2076,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO FOOD PIC.webp" width="100" height="100" loading="lazy" alt="VEGGIE BURGER"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2225,7 +2105,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Crunchy Chicken Burger.webp" width="100" height="100" loading="lazy" alt="CRUNCHY CHICKEN BURGER"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2254,7 +2134,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Caribbean Beef Burger.webp" width="100" height="100" loading="lazy" alt="CARIBBEAN BURGER"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2283,7 +2163,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/BBQ Beef Burger.webp" width="100" height="100" loading="lazy" alt="BBQ BURGER "
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2312,7 +2192,7 @@ traditional Habesha spices.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Texas Burger.webp" width="100" height="100" loading="lazy" alt="TEXAS BURGER"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2347,9 +2227,9 @@ eggs, gouda cheese.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -2369,7 +2249,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Margarita Pizza.webp" width="100" height="100" loading="lazy" alt="MARGARITA PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2397,7 +2277,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fajita Pizza.webp" width="100" height="100" loading="lazy" alt="CHICKEN FAJITA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2426,7 +2306,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Pollo Pizza.webp" width="100" height="100" loading="lazy" alt=POLLO PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2453,7 +2333,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Vegi Pizza.webp" width="100" height="100" loading="lazy" alt="VEGGIE PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2482,7 +2362,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Caramel Meat Special Pizza.webp" width="100" height="100" loading="lazy" alt="CARAMEL MEAT SPECIAL"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2511,7 +2391,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Hawaiian Pizza.webp" width="100" height="100" loading="lazy" alt="HAWAIIAN PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2539,7 +2419,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Pesto Pizza.webp" width="100" height="100" loading="lazy" alt="CHICKEN PESTO PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2568,7 +2448,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Steak Pizza.webp" width="100" height="100" loading="lazy" alt="CARAMEL STEAK PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2597,7 +2477,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Pepperoni Pizza.webp" width="100" height="100" loading="lazy" alt="BEEF PEPPERONI PIZZA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2631,9 +2511,9 @@ eggs, gouda cheese.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -2652,7 +2532,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Pesto Sandwich.webp" width="100" height="100" loading="lazy" alt=" CHICKEN PESTO SANDWICH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2681,7 +2561,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/BBQ CHICKEN SANDWICH.png" width="100" height="100" loading="lazy" alt="BBQ CHICKEN SANDWICH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2708,7 +2588,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Steak Sandwich.webp" width="100" height="100" loading="lazy" alt=STEAK SANDWICH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2735,7 +2615,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicken Shawrama.webp" width="100" height="100" loading="lazy" alt="SHAWARMA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2765,7 +2645,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Club Sandwhich.webp" width="100" height="100" loading="lazy" alt="SPECIAL CLUB"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2794,7 +2674,7 @@ eggs, gouda cheese.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fajita Chicken Wrap.webp" width="100" height="100" loading="lazy" alt="SPECIAL CLUB"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2823,7 +2703,7 @@ and served alongside sweet chili-infused potato wedges
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fajita Beef Wrap.webp" width="100" height="100" loading="lazy" alt="SPECIAL CLUB"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2857,9 +2737,9 @@ and served alongside sweet chili-infused potato wedges
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -2885,7 +2765,7 @@ and served alongside sweet chili-infused potato wedges
 
                 <figure class="card-banner img-holder" style="--width: 200; --height: 200;">
                   <img src="./assets/images/Tomato Cheese Sandwich.webp" width="100" height="100" loading="lazy" alt="Tomato Cheese Sandwich"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2913,7 +2793,7 @@ and served alongside sweet chili-infused potato wedges
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicken Cheese Sandwich.webp" width="100" height="100" loading="lazy" alt="Chicken Cheese Sandwich"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2941,7 +2821,7 @@ between slices of toasted bread
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicken Burger.jpg" width="100" height="100" loading="lazy" alt="Chicken Burger"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2968,7 +2848,7 @@ mayonnaise served with chips.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Beef Burger.jpg" width="100" height="100" loading="lazy" alt="Beef Burger"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -2997,7 +2877,7 @@ mayonnaise served with chips.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicken Strips.jpg" width="100" height="100" loading="lazy" alt="Chicken Strips"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3025,7 +2905,7 @@ mayonnaise served with chips.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fish Finger.jpg" width="100" height="100" loading="lazy" alt="Fish Finger"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3052,7 +2932,7 @@ mayonnaise served with chips.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Spaghetti Bolognaise.jpg" width="100" height="100" loading="lazy" alt="Spaghetti Bolognaise"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3079,7 +2959,7 @@ from fresh tomatoes and minced beef.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Chicps and Sausage.webp" width="100" height="100" loading="lazy" alt="Chips and Sausage"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3107,7 +2987,7 @@ from fresh tomatoes and minced beef.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Margarita Pizza.jpg" width="100" height="100" loading="lazy" alt="Margarita Pizza"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3136,7 +3016,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Beef Pizza.jpg" width="100" height="100" loading="lazy" alt="Beef Bacon Pizza"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3166,7 +3046,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Kidi Chicken Pizza.webp" width="100" height="100" loading="lazy" alt="Pollo Pizza"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3195,7 +3075,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Milkshake.jpg" width="100" height="100" loading="lazy" alt="Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3226,7 +3106,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Fresh Juice.jpg" width="100" height="100" loading="lazy" alt="Fresh Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3258,9 +3138,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -3283,7 +3163,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Espresso"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3313,7 +3193,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Espresso"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3342,7 +3222,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Cappuccino"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3372,7 +3252,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Flat White"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3401,7 +3281,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Latte.jpg" width="100" height="100" loading="lazy" alt="Latte"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3430,7 +3310,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Affogato"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3458,7 +3338,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Americano"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3486,7 +3366,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Frappuccino"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3514,7 +3394,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Baileys Cappucino"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3542,7 +3422,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Caramel Latte"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3570,7 +3450,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Hazelnut Latte"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3598,7 +3478,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Vanilla Latte"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3627,7 +3507,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Cinnamon Latte"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3655,7 +3535,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Iced Latte.jpg" width="100" height="100" loading="lazy" alt="Iced Latte"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3683,7 +3563,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Cafe Mocha"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3712,7 +3592,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="White Mocha"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3740,7 +3620,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Iced Mocha"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3769,7 +3649,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Hot Chocolate.jpg" width="100" height="100" loading="lazy" alt="Hot Chocolate"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3797,7 +3677,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="House Coffee"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3825,7 +3705,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="White Hot Chocolate"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3854,7 +3734,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="A Glass Of Milk"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3885,9 +3765,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -3906,7 +3786,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/Black Tea.jpg" width="100" height="100" loading="lazy" alt="Black Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3935,7 +3815,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="English Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3964,7 +3844,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Dawa Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -3992,7 +3872,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Tumeric Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4020,7 +3900,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Lemon Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4048,7 +3928,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Black Tea Spiced"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4076,7 +3956,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Iced Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4104,7 +3984,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="African Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4132,7 +4012,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Herbal Camomile Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4160,7 +4040,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Herbal Earl Grey Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4189,7 +4069,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Herbal Green Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4219,7 +4099,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Herbal Lemon Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4249,7 +4129,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Herbal Peppermint Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4279,7 +4159,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Herbal Freshmint Tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4313,9 +4193,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -4335,7 +4215,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Booster"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4364,7 +4244,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Pinacolada"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4393,7 +4273,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Mango Madnes"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4421,7 +4301,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Tropical"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4449,7 +4329,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Super Veggie"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4477,7 +4357,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Creamy Butter"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4505,7 +4385,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Glowing Skin"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4533,7 +4413,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Super Healthy 1"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4561,7 +4441,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Super Healthy 2"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4594,9 +4474,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -4615,7 +4495,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Orange Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4643,7 +4523,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Pineapple Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4671,7 +4551,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Watermelon juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4700,7 +4580,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Passion juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4729,7 +4609,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Mango Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4757,7 +4637,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Carrots Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4785,7 +4665,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Lemonade"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4813,7 +4693,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Apple Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4841,7 +4721,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Lemon Mint"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4869,7 +4749,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Pineapple Mint"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4897,7 +4777,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Mixed Juice"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4930,9 +4810,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -4952,7 +4832,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Mint Mojito"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -4980,7 +4860,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Strawberry Mojito"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5008,7 +4888,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Kiwi Mojito"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5041,9 +4921,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -5062,7 +4942,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Oreo Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5091,7 +4971,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Vanilla Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5120,7 +5000,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Chocolate Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5148,7 +5028,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Cookies Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5176,7 +5056,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Unicorn Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5204,7 +5084,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Strawberry Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5232,7 +5112,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Brownie Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5260,7 +5140,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Startaciatella Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5288,7 +5168,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Coconut Milkshake"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5321,9 +5201,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -5342,7 +5222,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Coca Cola"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5371,7 +5251,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Coke Zero"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5400,7 +5280,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Fanta"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5428,7 +5308,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Soda Water"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5456,7 +5336,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Sprite"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5484,7 +5364,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Stony"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5512,7 +5392,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Tonic Water"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5540,7 +5420,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Red Bull"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5568,7 +5448,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Krest"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5601,9 +5481,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -5623,7 +5503,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Material Girl"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5652,7 +5532,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Cranberry Pucker"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5680,7 +5560,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Passionate Girl"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5708,7 +5588,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Cool Down"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5736,7 +5616,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Virgin Strawberry Daiquiri"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5764,7 +5644,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Virging Captain Colada"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5792,7 +5672,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Material Boy"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5820,7 +5700,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/NO DRINKS.webp" width="100" height="100" loading="lazy" alt="Mango Pucker"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5853,9 +5733,9 @@ Pomodoro sauce.
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -5878,7 +5758,7 @@ Pomodoro sauce.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/The Aperols.jpg" width="100" height="100" loading="lazy" alt="APEROL MARTINI "
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5911,7 +5791,7 @@ other Dry Sparkling Wine,
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/The Aperols.jpg" width="100" height="100" loading="lazy" alt="APEROL SPIRITS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5943,7 +5823,7 @@ other Dry Sparkling Wine,
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/The Aperols.jpg" width="100" height="100" loading="lazy" alt="BOURBON APEROL"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -5975,7 +5855,7 @@ any other Dry Sparkling Wine,
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/SLAP & TICKLE.jpg" width="100" height="100" loading="lazy" alt="SLAP & TICKLE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6008,7 +5888,7 @@ Slap & Tickle?
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/FAITHFULL BITCH.jpg" width="100" height="100" loading="lazy" alt="FAITHFULL BITCH "
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6039,7 +5919,7 @@ drizzle of Grenadine
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/DESPERATE HOUSE WIFE.jpg" width="100" height="100" loading="lazy" alt="DESPERATE HOUSE WIFE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6072,7 +5952,7 @@ Lemonade
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/MOJITOS.jpg" width="100" height="100" loading="lazy" alt="KIWI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6105,7 +5985,7 @@ with a splash of Soda
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/MOJITOS.jpg" width="100" height="100" loading="lazy" alt="ORIGINAL (CLASSIC)"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6141,7 +6021,7 @@ topped with a splash of Soda
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/MOJITOS.jpg" width="100" height="100" loading="lazy" alt="STRAWBERRY"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6174,7 +6054,7 @@ of Soda Water
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/PAN GALACTIC.jpg" width="100" height="100" loading="lazy" alt="PAN GALACTIC"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6209,7 +6089,7 @@ frozen fun
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/7 DEVILS.jpg" width="100" height="100" loading="lazy" alt="7 DEVILS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6239,7 +6119,7 @@ Orange Juice &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/AFTER SEX AND IRON MAN.jpg" width="100" height="100" loading="lazy" alt="AFTER SEX"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6269,7 +6149,7 @@ Liqueur, Orange Juice &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/AFTER SEX AND IRON MAN.jpg" width="100" height="100" loading="lazy" alt="IRON MAN"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6300,7 +6180,7 @@ Melon, Sour Mix &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/LONG ISLAND.jpg" width="100" height="100" loading="lazy" alt="long island iced tea"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6331,7 +6211,7 @@ Coke. Tall, Dark & Tasty.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/LONG ISLAND.jpg" width="100" height="100" loading="lazy" alt="LONG ISLAND STRAWBERRY"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6362,7 +6242,7 @@ Coke. Tall, Dark & Tasty.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/LONG ISLAND.jpg" width="100" height="100" loading="lazy" alt="LONG ISLAND BLUE CURACAO"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6393,7 +6273,7 @@ Coke. Tall, Dark & Tasty.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/FROZEN MARGARITA.jpg" width="100" height="100" loading="lazy" alt="MANGO FROZEN MARGARITA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6423,7 +6303,7 @@ Sugar & Triple Sec
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/FROZEN MARGARITA.jpg" width="100" height="100" loading="lazy" alt="CLASSIC FROZEN MARGARITA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6453,7 +6333,7 @@ Lime, Sugar & Triple Sec
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/FROZEN MARGARITA.jpg" width="100" height="100" loading="lazy" alt="LEMON & MINT FROZEN MARGARITA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6483,7 +6363,7 @@ Mint, Sugar & Triple Sec
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/CLASSIC MARGARITA.jpg " width="100" height="100" loading="lazy" alt="CLASSIC MARGARITA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6511,7 +6391,7 @@ Mint, Sugar & Triple Sec
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/STRAWBERRY DAIQUIRI.jpg" width="100" height="100" loading="lazy" alt="STRAWBERRY DAIQUIRI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6542,7 +6422,7 @@ Juice served frozen
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/MOSCOW MULE.jpg" width="100" height="100" loading="lazy" alt="MOSCOw MULE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6571,7 +6451,7 @@ Lime Juice & Lime Wedges
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/MOSCOW MULE.jpg" width="100" height="100" loading="lazy" alt="GINGER APPLE PUNCH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6601,7 +6481,7 @@ Apple Cider
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/OLD FASHIONED.jpg" width="100" height="100" loading="lazy" alt="OLD FASHIONED"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6633,7 +6513,7 @@ Syrup, dash of Bitters &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/DIRTY MARTINI.jpg" width="100" height="100" loading="lazy" alt="DIRTY MARTINI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6662,7 +6542,7 @@ Syrup, dash of Bitters &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/DIRTY MARTINI.jpg" width="100" height="100" loading="lazy" alt="DRY MARTINI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6691,7 +6571,7 @@ Syrup, dash of Bitters &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/WHISKEY SMASH.jpg" width="100" height="100" loading="lazy" alt="WHISKEY SMASH"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6720,7 +6600,7 @@ Syrup, dash of Bitters &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/WHISKEY SMASH.jpg" width="100" height="100" loading="lazy" alt="WHISKEY SOUR"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6750,7 +6630,7 @@ Syrup, dash of Bitters &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/VIRGIN STRAWBERRY DAIQUIRI.jpg" width="100" height="100" loading="lazy" alt="VIRGIN STRAWBERRY DAIQUIRI"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6780,7 +6660,7 @@ Syrup, dash of Bitters &
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/MIXED BERRY SANGRIA.jpg" width="100" height="100" loading="lazy" alt="MIXED BERRY SANGRIA"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6812,7 +6692,7 @@ Strawberries, topped with Lemonade.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/THE BIG BANG.jpg" width="100" height="100" loading="lazy" alt="THE BIG BANG"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6844,7 +6724,7 @@ Juice & Lemonade.
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/CHERRY ROSE SPIRITS.jpg" width="100" height="100" loading="lazy" alt="CHERRY ROSE SPIRITS"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6876,7 +6756,7 @@ topped with Soda Water
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/JÄGER BOMB.jpg" width="100" height="100" loading="lazy" alt="JÄGER BOMB"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6904,7 +6784,7 @@ topped with Soda Water
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/COSMIC BOOM.jpg" width="100" height="100" loading="lazy" alt="COSMIC BOOM"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6933,7 +6813,7 @@ cosmopolitan
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/TIPPERARY.jpg" width="100" height="100" loading="lazy" alt="BLACK n' JAM"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6963,7 +6843,7 @@ Blackberry Jam, Raspberry Jam
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/IRISH COFFEE.jpg" width="100" height="100" loading="lazy" alt="IRISH COFFEE"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -6992,7 +6872,7 @@ Blackberry Jam, Raspberry Jam
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/TIPPERARY.jpg" width="100" height="100" loading="lazy" alt="TIPPERARY"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7022,7 +6902,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/TIPPERARY.jpg" width="100" height="100" loading="lazy" alt="EMERALD"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7057,9 +6937,9 @@ Fresh Thyme leaves
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -7089,7 +6969,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Sweet Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7117,7 +6997,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Cramique"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7145,7 +7025,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7173,7 +7053,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7201,7 +7081,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7229,7 +7109,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7257,7 +7137,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7290,9 +7170,9 @@ Fresh Thyme leaves
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -7313,7 +7193,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Sweet Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7341,7 +7221,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Cramique"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7369,7 +7249,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7397,7 +7277,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7425,7 +7305,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7453,7 +7333,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7481,7 +7361,7 @@ Fresh Thyme leaves
 
                 <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
                   <img src="./assets/images/No Bread.webp" width="100" height="100" loading="lazy" alt="Brown Bread"
-                    class="img-cover">
+                    class="img-cover" decoding="async">
                 </figure>
 
                 <div>
@@ -7514,9 +7394,9 @@ Fresh Thyme leaves
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -7768,9 +7648,9 @@ Fresh Thyme leaves
           </a>
 
           <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
+            class="shape shape-2 move-anim" decoding="async">
           <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            class="shape shape-3 move-anim" decoding="async">
 
         </div>
       </section>
@@ -7790,13 +7670,13 @@ Fresh Thyme leaves
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script defer src="./assets/js/script.js"></script>
 
   <!-- 
     - ionicon link
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
