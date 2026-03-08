@@ -2557,6 +2557,12 @@ body.loaded { overflow: auto; }
 
 .sidebar {
   background: linear-gradient(180deg, #5e4037 0%, #4a322b 100%);
+  box-shadow: 12px 0 28px rgba(0, 0, 0, 0.35);
+}
+
+.sidebar .close-btn:hover,
+.sidebar .close-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .whatsapp-popup {
